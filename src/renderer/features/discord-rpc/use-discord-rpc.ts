@@ -40,7 +40,7 @@ export const useDiscordRpc = () => {
         const activity: SetActivity = {
             details: song?.name.padEnd(2, ' ') || 'Idle',
             instance: false,
-            largeImageKey: undefined,
+            largeImageKey: currentSong?.imageUrl || 'icon',
             largeImageText: song?.album || 'Unknown album',
             smallImageKey: undefined,
             smallImageText: currentStatus,
@@ -59,14 +59,6 @@ export const useDiscordRpc = () => {
             activity.smallImageKey = 'playing';
         } else {
             activity.smallImageKey = 'paused';
-        }
-
-        if (
-            song?.serverType === ServerType.JELLYFIN &&
-            discordSettings.showServerImage &&
-            song?.imageUrl
-        ) {
-            activity.largeImageKey = song?.imageUrl;
         }
 
         if (generalSettings.lastfmApiKey && song?.album && song?.albumArtists.length) {
