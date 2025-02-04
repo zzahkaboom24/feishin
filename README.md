@@ -152,7 +152,7 @@ Ubunutu 24.04 specifically introduced breaking changes that affect how namespace
 
 ## Development
 
-Built and tested using Node `v16.15.0`.
+Built and tested using Node `v20.6.0`.
 
 This project is built off of [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) v4.6.0.
 
